@@ -1,98 +1,87 @@
-/* Estilo básico */
+/* General */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
-  }  
-  /* Estilos generales para escritorio */
-body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
+}
+
+header {
+    background-color: #1e3d58;
     color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
     padding: 20px;
-  }
-  
-  footer {
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #1e3d58;
+    color: white;
     text-align: center;
     padding: 10px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
-  }
-  
-  /* Media Queries para pantallas pequeñas (celulares) */
-  @media only screen and (max-width: 768px) {
-    nav a {
-      display: block;
-      margin: 10px 0;
-      text-align: center;
-    }
-  
-    header {
-      padding: 15px;
-    }
-  
-    footer {
-      font-size: 12px;
-      padding: 15px;
-    }
-  
-    main {
-      padding: 10px;
-    }
-  }  
+}
+
+/* Diferentes colores para las secciones */
+.section-ligas {
+    background-color: #fce5cd;
+}
+
+.section-calendario {
+    background-color: #c6e2ff;
+}
+
+.section-resultados {
+    background-color: #d9ead3;
+}
+
+.section-tabla-posiciones {
+    background-color: #f9e79f;
+}
+
+.section-goleadores {
+    background-color: #fadbd8;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f1f1;
+}
