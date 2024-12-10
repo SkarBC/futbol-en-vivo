@@ -4,240 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fútbol en Vivo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-            margin: 10px;
-            border-radius: 5px;
-            color: white;
-        }
-
-        .premier-league {
-            background-color: #006F3F;
-        }
-
-        .liga-mx {
-            background-color: #006B87;
-        }
-
-        .liga-espanola {
-            background-color: #B91C27;
-        }
-
-        .serie-a {
-            background-color: #009C3B;
-        }
-
-        .eredivise {
-            background-color: #003D5B;
-        }
-
-        .bundesliga {
-            background-color: #E20A37;
-        }
-
-        .ligue-1 {
-            background-color: #003B5C;
-        }
-
-        .champions-league {
-            background-color: #000080;
-        }
-
-        .europa-league {
-            background-color: #5E4B8B;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin: 10px 0;
-            }
-        }
-
-        .team-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .team {
-            width: 120px;
-            text-align: center;
-            margin: 10px;
-        }
-
-        .team img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-        }
-
-        .team-name {
-            margin-top: 10px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .team a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .matches {
-            margin-top: 20px;
-        }
-
-        .match {
-            padding: 10px;
-            background-color: #333;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-
-        .match h3 {
-            font-size: 16px;
-        }
-
-        .match span {
-            font-size: 14px;
-            color: lightgrey;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Fútbol en Vivo</h1>
-    <p>Resultados y calendario en tiempo real</p>
-</header>
+    <header>
+        <h1>Fútbol en Vivo</h1>
+        <nav>
+            <ul>
+                <li><a href="#liga-mx">Liga MX</a></li>
+                <li><a href="#laliga">La Liga</a></li>
+                <li><a href="#serie-a">Serie A</a></li>
+                <li><a href="#bundesliga">Bundesliga</a></li>
+                <li><a href="#premier-league">Premier League</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav>
-    <a href="#premier-league">Premier League</a>
-    <a href="#liga-mx">Liga MX</a>
-    <a href="#liga-espanola">Liga Española</a>
-    <a href="#serie-a">Serie A</a>
-    <a href="#eredivise">Eredivisie</a>
-    <a href="#bundesliga">Bundesliga</a>
-    <a href="#ligue-1">Ligue 1</a>
-    <a href="#champions-league">Champions League</a>
-    <a href="#europa-league">Europa League</a>
-</nav>
+    <!-- Liga MX Section -->
+    <section id="liga-mx" class="league-section liga-mx">
+        <h2>Liga MX</h2>
+        <div class="teams">
+            <h3>Equipos:</h3>
+            <ul>
+                <li><a href="team_page.html?team=America"><img src="america_logo.png" alt="América"> América</a></li>
+                <li><a href="team_page.html?team=Atlas"><img src="atlas_logo.png" alt="Atlas"> Atlas</a></li>
+                <li><a href="team_page.html?team=AtleticoSanLuis"><img src="atletico_san_luis_logo.png" alt="Atlético San Luis"> Atlético San Luis</a></li>
+                <li><a href="team_page.html?team=CruzAzul"><img src="cruz_azul_logo.png" alt="Cruz Azul"> Cruz Azul</a></li>
+                <li><a href="team_page.html?team=Guadalajara"><img src="guadalajara_logo.png" alt="Guadalajara"> Guadalajara</a></li>
+                <li><a href="team_page.html?team=Leon"><img src="leon_logo.png" alt="León"> León</a></li>
+                <li><a href="team_page.html?team=Mazatlan"><img src="mazatlan_logo.png" alt="Mazatlán"> Mazatlán</a></li>
+                <li><a href="team_page.html?team=Monterrey"><img src="monterrey_logo.png" alt="Monterrey"> Monterrey</a></li>
+                <li><a href="team_page.html?team=FCJuárez"><img src="FC_Juárez_logo.png" alt="FC Juárez"> FC Juárez</a></li>
+                <li><a href="team_page.html?team=Necaxa"><img src="necaxa_logo.png" alt="Necaxa"> Necaxa</a></li>
+                <li><a href="team_page.html?team=Pachuca"><img src="pachuca_logo.png" alt="Pachuca"> Pachuca</a></li>
+                <li><a href="team_page.html?team=Puebla"><img src="puebla_logo.png" alt="Puebla"> Puebla</a></li>
+                <li><a href="team_page.html?team=Querétaro"><img src="queretaro_logo.png" alt="Querétaro"> Querétaro</a></li>
+                <li><a href="team_page.html?team=SantosLaguna"><img src="santos_laguna_logo.png" alt="Santos Laguna"> Santos Laguna</a></li>
+                <li><a href="team_page.html?team=TigresUANL"><img src="tigres_uanl_logo.png" alt="Tigres UANL"> Tigres UANL</a></li>
+                <li><a href="team_page.html?team=Toluca"><img src="toluca_logo.png" alt="Toluca"> Toluca</a></li>
+                <li><a href="team_page.html?team=Tijuana"><img src="tijuana_logo.png" alt="Tijuana"> Tijuana</a></li>
+                <li><a href="team_page.html?team=PumasUNAM"><img src="pumas_unam_logo.png" alt="Pumas UNAM"> Pumas UNAM</a></li>
+            </ul>
+        </div>
+    </section>
 
-<!-- Sección Premier League -->
-<section id="premier-league" class="premier-league">
-    <h2>Premier League</h2>
-    <div class="team-list">
-        <!-- Equipos de la Premier League aquí -->
-    </div>
-    <div id="premier-matches" class="matches"></div>
-</section>
+    <!-- La Liga Section -->
+    <section id="laliga" class="league-section laliga">
+        <h2>La Liga Española</h2>
+        <div class="teams">
+            <h3>Equipos:</h3>
+            <ul>
+                <li><a href="team_page.html?team=Alaves"><img src="alaves_logo.png" alt="Alavés"> Alavés</a></li>
+                <li><a href="team_page.html?team=AthleticBilbao"><img src="athletic_bilbao_logo.png" alt="Athletic Club"> Athletic Club</a></li>
+                <li><a href="team_page.html?team=AtleticoMadrid"><img src="atletico_madrid_logo.png" alt="Atlético de Madrid"> Atlético de Madrid</a></li>
+                <li><a href="team_page.html?team=Barcelona"><img src="barcelona_logo.png" alt="Barcelona"> Barcelona</a></li>
+                <li><a href="team_page.html?team=CeltaVigo"><img src="celta_vigo_logo.png" alt="Celta de Vigo"> Celta de Vigo</a></li>
+                <li><a href="team_page.html?team=Espanyol"><img src="espanyol_logo.png" alt="Espanyol"> Espanyol</a></li>
+                <li><a href="team_page.html?team=Getafe"><img src="getafe_logo.png" alt="Getafe"> Getafe</a></li>
+                <li><a href="team_page.html?team=Girona"><img src="girona_logo.png" alt="Girona"> Girona</a></li>
+                <li><a href="team_page.html?team=Leganes"><img src="leganes_logo.png" alt="Leganés"> Leganés</a></li>
+                <li><a href="team_page.html?team=LasPalmas"><img src="las_palmas_logo.png" alt="Las Palmas"> Las Palmas</a></li>
+                <li><a href="team_page.html?team=Mallorca"><img src="mallorca_logo.png" alt="Mallorca"> Mallorca</a></li>
+                <li><a href="team_page.html?team=Osasuna"><img src="osasuna_logo.png" alt="Osasuna"> Osasuna</a></li>
+                <li><a href="team_page.html?team=RayoVallecano"><img src="rayo_vallecano_logo.png" alt="Rayo Vallecano"> Rayo Vallecano</a></li>
+                <li><a href="team_page.html?team=RealBetis"><img src="real_betis_logo.png" alt="Real Betis"> Real Betis</a></li>
+                <li><a href="team_page.html?team=RealMadrid"><img src="real_madrid_logo.png" alt="Real Madrid"> Real Madrid</a></li>
+                <li><a href="team_page.html?team=RealSociedad"><img src="real_sociedad_logo.png" alt="Real Sociedad"> Real Sociedad</a></li>
+                <li><a href="team_page.html?team=RealValladolid"><img src="real_valladolid_logo.png" alt="Real Valladolid"> Real Valladolid</a></li>
+                <li><a href="team_page.html?team=Sevilla"><img src="sevilla_logo.png" alt="Sevilla"> Sevilla</a></li>
+                <li><a href="team_page.html?team=Valencia"><img src="valencia_logo.png" alt="Valencia"> Valencia</a></li>
+                <li><a href="team_page.html?team=Villarreal"><img src="villarreal_logo.png" alt="Villarreal"> Villarreal</a></li>
+            </ul>
+        </div>
+    </section>
 
-<!-- Sección Liga MX -->
-<section id="liga-mx" class="liga-mx">
-    <h2>Liga MX</h2>
-    <div class="team-list">
-        <!-- Equipos de la Liga MX aquí -->
-    </div>
-    <div id="liga-mx-matches" class="matches"></div>
-</section>
+    <!-- Serie A Section -->
+    <section id="serie-a" class="league-section serie-a">
+        <h2>Serie A</h2>
+        <div class="teams">
+            <h3>Equipos:</h3>
+            <ul>
+                <li><a href="team_page.html?team=Atalanta"><img src="atalanta_logo.png" alt="Atalanta"> Atalanta</a></li>
+                <li><a href="team_page.html?team=Bologna"><img src="bologna_logo.png" alt="Bologna"> Bologna</a></li>
+                <li><a href="team_page.html?team=Como"><img src="como_logo.png" alt="Como"> Como</a></li>
+                <li><a href="team_page.html?team=Empoli"><img src="empoli_logo.png" alt="Empoli"> Empoli</a></li>
+                <li><a href="team_page.html?team=Fiorentina"><img src="fiorentina_logo.png" alt="Fiorentina"> Fiorentina</a></li>
+                <li><a href="team_page.html?team=Genoa"><img src="genoa_logo.png" alt="Genoa"> Genoa</a></li>
+                <li><a href="team_page.html?team=InterMilano"><img src="inter_milan_logo.png" alt="Inter de Milán"> Inter de Milán</a></li>
+                <li><a href="team_page.html?team=Juventus"><img src="juventus_logo.png" alt="Juventus"> Juventus</a></li>
+                <li><a href="team_page.html?team=Lazio"><img src="lazio_logo.png" alt="Lazio"> Lazio</a></li>
+                <li><a href="team_page.html?team=Lecce"><img src="lecce_logo.png" alt="Lecce"> Lecce</a></li>
+                <li><a href="team_page.html?team=Milan"><img src="milan_logo.png" alt="Milan"> Milan</a></li>
+                <li><a href="team_page.html?team=Monza"><img src="monza_logo.png" alt="Monza"> Monza</a></li>
+                <li><a href="team_page.html?team=Napoli"><img src="napoli_logo.png" alt="Napoli"> Napoli</a></li>
+                <li><a href="team_page.html?team=Parma"><img src="parma_logo.png" alt="Parma"> Parma</a></li>
+                <li><a href="team_page.html?team=Roma"><img src="roma_logo.png" alt="Roma"> Roma</a></li>
+                <li><a href="team_page.html?team=Torino"><img src="torino_logo.png" alt="Torino"> Torino</a></li>
+                <li><a href="team_page.html?team=Udinese"><img src="udinese_logo.png" alt="Udinese"> Udinese</a></li>
+                <li><a href="team_page.html?team=Venezia"><img src="venezia_logo.png" alt="Venezia"> Venezia</a></li>
+                <li><a href="team_page.html?team=HellasVerona"><img src="hellas_verona_logo.png" alt="Hellas Verona"> Hellas Verona</a></li>
+                <li><a href="team_page.html?team=Cagliari"><img src="cagliari_logo.png" alt="Cagliari"> Cagliari</a></li>
+            </ul>
+        </div>
+    </section>
 
-<!-- Sección Liga Española -->
-<section id="liga-espanola" class="liga-espanola">
-    <h2>Liga Española</h2>
-    <div class="team-list">
-        <!-- Equipos de la Liga Española aquí -->
-    </div>
-    <div id="liga-espanola-matches" class="matches"></div>
-</section>
+    <!-- Bundesliga Section -->
+    <section id="bundesliga" class="league-section bundesliga">
+        <h2>Bundesliga</h2>
+        <div class="teams">
+            <h3>Equipos:</h3>
+            <ul>
+                <li><a href="team_page.html?team=Augsburgo"><img src="augsburgo_logo.png" alt="Augsburgo"> Augsburg</a></li>
+                <li><a href="team_page.html?team=BayerLeverkusen"><img src="bayer_leverkusen_logo.png" alt="Bayer Leverkusen"> Bayer Leverkusen</a></li>
+                <li><a href="team_page.html?team=BayernMunich"><img src="bayern_munich_logo.png" alt="Bayern Múnich"> Bayern Múnich</a></li>
+                <li><a href="team_page.html?team=Bochum"><img src="bochum_logo.png" alt="Bochum"> Bochum</a></li>
+                <li><a href="team_page.html?team=BorussiaDortmund"><img src="borussia_dortmund_logo.png" alt="Borussia Dortmund"> Borussia Dortmund</a></li>
+                <li><a href="team_page.html?team=BorussiaMonchengladbach"><img src="borussia_monchengladbach_logo.png" alt="Borussia Mönchengladbach"> Borussia Mönchengladbach</a></li>
+                <li><a href="team_page.html?team=Colonia"><img src="colonia_logo.png" alt="Colonia"> Colonia</a></li>
+                <li><a href="team_page.html?team=EintrachtFrankfurt"><img src="eintracht_frankfurt_logo.png" alt="Eintracht Frankfurt"> Eintracht Frankfurt</a></li>
+                <li><a href="team_page.html?team=Friburgo"><img src="friburgo_logo.png" alt="Friburgo"> Friburgo</a></li>
+                <li><a href="team_page.html?team=Hoffenheim"><img src="hoffenheim_logo.png" alt="Hoffenheim"> Hoffenheim</a></li>
+                <li><a href="team_page.html?team=KSVHolsteinKiel"><img src="ksv_holstein_kiel_logo.png" alt="KSV Holstein Kiel"> KSV Holstein Kiel</a></li>
+                <li><a href="team_page.html?team=Mainz05"><img src="mainz_05_logo.png" alt="Mainz 05"> Mainz 05</a></li>
+                <li><a href="team_page.html?team=RBLeipzig"><img src="rb_leipzig_logo.png" alt="RB Leipzig"> RB Leipzig</a></li>
+                <li><a href="team_page.html?team=Stuttgart"><img src="stuttgart_logo.png" alt="Stuttgart"> Stuttgart</a></li>
+                <li><a href="team_page.html?team=StPauli"><img src="st_pauli_logo.png" alt="St. Pauli"> St. Pauli</a></li>
+                <li><a href="team_page.html?team=UnionBerlin"><img src="union_berlin_logo.png" alt="Union Berlín"> Union Berlín</a></li>
+                <li><a href="team_page.html?team=WerderBremen"><img src="werder_bremen_logo.png" alt="Werder Bremen"> Werder Bremen</a></li>
+                <li><a href="team_page.html?team=Wolfsburgo"><img src="wolfsburgo_logo.png" alt="Wolfsburgo"> Wolfsburgo</a></li>
+            </ul>
+        </div>
+    </section>
 
-<!-- Sección Serie A -->
-<section id="serie-a" class="serie-a">
-    <h2>Serie A</h2>
-    <div class="team-list">
-        <!-- Equipos de la Serie A aquí -->
-    </div>
-    <div id="serie-a-matches" class="matches"></div>
-</section>
-
-<!-- Puedes agregar más secciones aquí -->
-
-<script>
-// Tu clave de API
-const apiKey = 'TU_API_KEY'; // Reemplaza con tu propia API Key
-
-// Función para obtener los partidos de la liga
-async function getMatches(competition, containerId) {
-    const url = `https://api.football-data.org/v4/competitions/${competition}/matches`;
-    const response = await fetch(url, {
-        headers: { 'X-Auth-Token': apiKey }
-    });
-    const data = await response.json();
-    const matchesContainer = document.getElementById(containerId);
-
-    // Limitar a los primeros 5 partidos (puedes ajustarlo)
-    const matches = data.matches.slice(0, 5);
-
-    matchesContainer.innerHTML = matches.map(match => {
-        const homeTeam = match.homeTeam.name;
-        const awayTeam = match.awayTeam.name;
-        const status = match.status;
-        const score = match.score.fullTime;
-        return `
-            <div class="match">
-                <h3>${homeTeam} vs ${awayTeam}</h3>
-                <span>Status: ${status}</span><br>
-                <span>Resultado: ${score.homeTeam} - ${score.awayTeam}</span>
-            </div>
-        `;
-    }).join('');
-}
-
-// Cargar los partidos para cada liga
-window.onload = () => {
-    getMatches('PL', 'premier-matches'); // Premier League
-    getMatches('PD', 'liga-espanola-matches'); // La Liga (España)
-    getMatches('SA', 'serie-a-matches'); // Serie A (Italia)
-    getMatches('MX', 'liga-mx-matches'); // Liga MX
-    // Puedes añadir más ligas según necesites
-};
-</script>
+    <!-- Premier League Section -->
+    <section id="premier-league" class="league-section premier-league">
+        <h2>Premier League</h2>
+        <div class="teams">
+            <h3>Equipos:</h3>
+            <ul>
+                <li><a href="team_page.html?team=Arsenal"><img src="arsenal_logo.png" alt="Arsenal"> Arsenal</a></li>
+                <li><a href="team_page.html?team=AstonVilla"><img src="aston_villa_logo.png" alt="Aston Villa"> Aston Villa</a></li>
+                <li><a href="team_page.html?team=Bournemouth"><img src="bournemouth_logo.png" alt="Bournemouth"> Bournemouth</a></li>
+                <li><a href="team_page.html?team=Brentford"><img src="brentford_logo.png" alt="Brentford"> Brentford</a></li>
+                <li><a href="team_page.html?team=BrightonHoveAlbion"><img src="brighton_hove_albion_logo.png" alt="Brighton & Hove Albion"> Brighton & Hove Albion</a></li>
+                <li><a href="team_page.html?team=Chelsea"><img src="chelsea_logo.png" alt="Chelsea"> Chelsea</a></li>
+                <li><a href="team_page.html?team=CrystalPalace"><img src="crystal_palace_logo.png" alt="Crystal Palace"> Crystal Palace</a></li>
+                <li><a href="team_page.html?team=Everton"><img src="everton_logo.png" alt="Everton"> Everton</a></li>
+                <li><a href="team_page.html?team=Fulham"><img src="fulham_logo.png" alt="Fulham"> Fulham</a></li>
+                <li><a href="team_page.html?team=Liverpool"><img src="liverpool_logo.png" alt="Liverpool"> Liverpool</a></li>
+                <li><a href="team_page.html?team=LeicesterCity"><img src="leicester_city_logo.png" alt="Leicester City"> Leicester City</a></li>
+                <li><a href="team_page.html?team=ManchesterCity"><img src="manchester_city_logo.png" alt="Manchester City"> Manchester City</a></li>
+                <li><a href="team_page.html?team=ManchesterUnited"><img src="manchester_united_logo.png" alt="Manchester United"> Manchester United</a></li>
+                <li><a href="team_page.html?team=NewcastleUnited"><img src="newcastle_united_logo.png" alt="Newcastle United"> Newcastle United</a></li>
+                <li><a href="team_page.html?team=NottinghamForest"><img src="nottingham_forest_logo.png" alt="Nottingham Forest"> Nottingham Forest</a></li>
+                <li><a href="team_page.html?team=Southampton"><img src="southampton_logo.png" alt="Southampton"> Southampton</a></li>
+                <li><a href="team_page.html?team=TottenhamHotspur"><img src="tottenham_hotspur_logo.png" alt="Tottenham Hotspur"> Tottenham Hotspur</a></li>
+                <li><a href="team_page.html?team=WestHamUnited"><img src="west_ham_united_logo.png" alt="West Ham United"> West Ham United</a></li>
+                <li><a href="team_page.html?team=Wolves"><img src="wolves_logo.png" alt="Wolves"> Wolves</a></li>
+            </ul>
+        </div>
+    </section>
 
 </body>
 </html>
