@@ -92,6 +92,27 @@
                 margin: 10px 0;
             }
         }
+
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team {
+            width: 120px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .team img {
+            width: 100%;
+            height: auto;
+        }
+
+        .team-name {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -117,55 +138,92 @@
     <h2>Premier League</h2>
     <p>Resultados en vivo de la Premier League</p>
     <div id="premier-results"></div>
+
+    <div class="team-list">
+        <div class="team">
+            <img src="images/arsenal.png" alt="Arsenal">
+            <div class="team-name">Arsenal</div>
+        </div>
+        <div class="team">
+            <img src="images/astonvilla.png" alt="Aston Villa">
+            <div class="team-name">Aston Villa</div>
+        </div>
+        <div class="team">
+            <img src="images/bournemouth.png" alt="Bournemouth">
+            <div class="team-name">Bournemouth</div>
+        </div>
+        <div class="team">
+            <img src="images/brentford.png" alt="Brentford">
+            <div class="team-name">Brentford</div>
+        </div>
+        <div class="team">
+            <img src="images/brighton.png" alt="Brighton">
+            <div class="team-name">Brighton</div>
+        </div>
+        <div class="team">
+            <img src="images/chelsea.png" alt="Chelsea">
+            <div class="team-name">Chelsea</div>
+        </div>
+        <div class="team">
+            <img src="images/crystalpalace.png" alt="Crystal Palace">
+            <div class="team-name">Crystal Palace</div>
+        </div>
+        <div class="team">
+            <img src="images/everton.png" alt="Everton">
+            <div class="team-name">Everton</div>
+        </div>
+        <div class="team">
+            <img src="images/fulham.png" alt="Fulham">
+            <div class="team-name">Fulham</div>
+        </div>
+        <div class="team">
+            <img src="images/liverpool.png" alt="Liverpool">
+            <div class="team-name">Liverpool</div>
+        </div>
+        <div class="team">
+            <img src="images/leicester.png" alt="Leicester City">
+            <div class="team-name">Leicester City</div>
+        </div>
+        <div class="team">
+            <img src="images/manchestercity.png" alt="Manchester City">
+            <div class="team-name">Manchester City</div>
+        </div>
+        <div class="team">
+            <img src="images/manchesterunited.png" alt="Manchester United">
+            <div class="team-name">Manchester United</div>
+        </div>
+        <div class="team">
+            <img src="images/newcastle.png" alt="Newcastle United">
+            <div class="team-name">Newcastle United</div>
+        </div>
+        <div class="team">
+            <img src="images/nottinghamforest.png" alt="Nottingham Forest">
+            <div class="team-name">Nottingham Forest</div>
+        </div>
+        <div class="team">
+            <img src="images/southampton.png" alt="Southampton">
+            <div class="team-name">Southampton</div>
+        </div>
+        <div class="team">
+            <img src="images/tottenham.png" alt="Tottenham Hotspur">
+            <div class="team-name">Tottenham Hotspur</div>
+        </div>
+        <div class="team">
+            <img src="images/westham.png" alt="West Ham United">
+            <div class="team-name">West Ham United</div>
+        </div>
+        <div class="team">
+            <img src="images/wolves.png" alt="Wolverhampton Wanderers">
+            <div class="team-name">Wolves</div>
+        </div>
+        <div class="team">
+            <img src="images/ipswich.png" alt="Ipswich Town">
+            <div class="team-name">Ipswich Town</div>
+        </div>
+    </div>
 </section>
 
-<section id="liga-mx" class="liga-mx">
-    <h2>Liga MX</h2>
-    <p>Resultados en vivo de la Liga MX</p>
-    <div id="liga-mx-results"></div>
-</section>
-
-<section id="liga-espanola" class="liga-espanola">
-    <h2>Liga Española</h2>
-    <p>Resultados en vivo de la Liga Española</p>
-    <div id="liga-espanola-results"></div>
-</section>
-
-<section id="serie-a" class="serie-a">
-    <h2>Serie A</h2>
-    <p>Resultados en vivo de la Serie A</p>
-    <div id="serie-a-results"></div>
-</section>
-
-<section id="eredivise" class="eredivise">
-    <h2>Eredivisie</h2>
-    <p>Resultados en vivo de la Eredivisie</p>
-    <div id="eredivise-results"></div>
-</section>
-
-<section id="bundesliga" class="bundesliga">
-    <h2>Bundesliga</h2>
-    <p>Resultados en vivo de la Bundesliga</p>
-    <div id="bundesliga-results"></div>
-</section>
-
-<section id="ligue-1" class="ligue-1">
-    <h2>Ligue 1</h2>
-    <p>Resultados en vivo de la Ligue 1</p>
-    <div id="ligue-1-results"></div>
-</section>
-
-<section id="champions-league" class="champions-league">
-    <h2>Champions League</h2>
-    <p>Resultados en vivo de la Champions League</p>
-    <div id="champions-league-results"></div>
-</section>
-
-<section id="europa-league" class="europa-league">
-    <h2>Europa League</h2>
-    <p>Resultados en vivo de la Europa League</p>
-    <div id="europa-league-results"></div>
-</section>
+<!-- Secciones para otras ligas -->
 
 <script>
 // API Key y URL de la API (reemplaza tu API Key real aquí)
