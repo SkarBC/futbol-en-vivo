@@ -13,11 +13,13 @@ fetch(url, {
 .then(data => {
     const resultadosDiv = document.getElementById('resultados-en-vivo');
     let resultadosHTML = '<h3>Partidos en vivo</h3>';
+    
     data.response.forEach(partido => {
         resultadosHTML += `
             <p>${partido.teams.home.name} vs ${partido.teams.away.name} - ${partido.goals.home} : ${partido.goals.away}</p>
         `;
     });
+    
     resultadosDiv.innerHTML = resultadosHTML;
 })
 .catch(err => {
