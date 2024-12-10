@@ -1,0 +1,14 @@
+const apiKey = '8e27fefad48244b0b6180620d150c2ad';  // Tu clave API
+const url = `https://api-football-v1.p.rapidapi.com/v3/fixtures?live=true`;
+
+fetch(url, {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': apiKey,
+        'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);  // Aquí podrás ver los resultados en la consola
+    const resultadosDiv = document.getElementById('resultados
