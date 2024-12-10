@@ -4,35 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fútbol en Vivo</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Resetear márgenes y padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Secciones */
+        section {
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .premier-league {
+            background-color: #006F3F; /* Premier League */
+        }
+
+        .liga-mx {
+            background-color: #006B87; /* Liga MX */
+        }
+
+        .liga-espanola {
+            background-color: #B91C27; /* Liga Española */
+        }
+
+        .serie-a {
+            background-color: #009C3B; /* Serie A */
+        }
+
+        .eredivise {
+            background-color: #003D5B; /* Eredivisie */
+        }
+
+        .bundesliga {
+            background-color: #E20A37; /* Bundesliga */
+        }
+
+        .ligue-1 {
+            background-color: #003B5C; /* Ligue 1 */
+        }
+
+        .champions-league {
+            background-color: #000080; /* Champions League */
+        }
+
+        .europa-league {
+            background-color: #5E4B8B; /* Europa League */
+        }
+
+        /* Responsivo para pantallas pequeñas */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Fútbol en Vivo</h1>
-        <nav>
-            <ul>
-                <li><a href="#resultados">Resultados</a></li>
-                <li><a href="#noticias">Noticias</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="resultados">
-        <h2>Resultados recientes</h2>
-        <div id="resultados-en-vivo"></div>
-    </section>
+<header>
+    <h1>Fútbol en Vivo</h1>
+    <p>Resultados y noticias en tiempo real</p>
+</header>
 
-    <section id="noticias">
-        <h2>Últimas noticias</h2>
-        <p>¡Pronto tendremos noticias en tiempo real!</p>
-    </section>
+<nav>
+    <a href="#premier-league">Premier League</a>
+    <a href="#liga-mx">Liga MX</a>
+    <a href="#liga-espanola">Liga Española</a>
+    <a href="#serie-a">Serie A</a>
+    <a href="#eredivise">Eredivisie</a>
+    <a href="#bundesliga">Bundesliga</a>
+    <a href="#ligue-1">Ligue 1</a>
+    <a href="#champions-league">Champions League</a>
+    <a href="#europa-league">Europa League</a>
+</nav>
 
-    <footer>
-        <p>&copy; 2024 Fútbol en Vivo. Todos los derechos reservados.</p>
-    </footer>
+<section id="premier-league" class="premier-league">
+    <h2>Premier League</h2>
+    <p>Resultados en vivo de la Premier League</p>
+    <div id="premier-results"></div>
+</section>
 
-    <script src="script.js"></script>
+<section id="liga-mx" class="liga-mx">
+    <h2>Liga MX</h2>
+    <p>Resultados en vivo de la Liga MX</p>
+    <div id="liga-mx-results"></div>
+</section>
+
+<section id="liga-espanola" class="liga-espanola">
+    <h2>Liga Española</h2>
+    <p>Resultados en vivo de la Liga Española</p>
+    <div id="liga-espanola-results"></div>
+</section>
+
+<section id="serie-a" class="serie-a">
+    <h2>Serie A</h2>
+    <p>Resultados en vivo de la Serie A</p>
+    <div id="serie-a-results"></div>
+</section>
+
+<section id="eredivise" class="eredivise">
+    <h2>Eredivisie</h2>
+    <p>Resultados en vivo de la Eredivisie</p>
+    <div id="eredivise-results"></div>
+</section>
+
+<section id="bundesliga" class="bundesliga">
+    <h2>Bundesliga</h2>
+    <p>Resultados en vivo de la Bundesliga</p>
+    <div id="bundesliga-results"></div>
+</section>
+
+<section id="ligue-1" class="ligue-1">
+    <h2>Ligue 1</h2>
+    <p>Resultados en vivo de la Ligue 1</p>
+    <div id="ligue-1-results"></div>
+</section>
+
+<section id="champions-league" class="champions-league">
+    <h2>Champions League</h2>
+    <p>Resultados en vivo de la Champions League</p>
+    <div id="champions-league-results"></div>
+</section>
+
+<section id="europa-league" class="europa-league">
+    <h2>Europa League</h2>
+    <p>Resultados en vivo de la Europa League</p>
+    <div id="europa-league-results"></div>
+</section>
+
+<script>
+// API Key y URL de la API (reemplaza tu API Key real aquí)
+const apiKey = '8e27fefad48244b0b6180620d150c2ad';
+const apiUrl = 'https://api.football-data.org/v4/matches';
+
+// Función para obtener y mostrar los resultados en vivo para cada liga
+async function obtenerResultados(liga, containerId) {
+    try {
+        const response = await fetch(apiUrl, {
+            headers: {
+                'X-Auth-Token': apiKey
+            }
+        });
+        const data = await response.json();
+        const partidos = data.matches.filter(match => match.competition.name === liga);
+
+        let resultadosHTML = '<ul>';
+        partidos.forEach(match => {
+            resultadosHTML += `
+                <li>${match.homeTeam.name} ${match.score.fullTime.homeTeam} - ${match.score.fullTime.awayTeam} ${match.awayTeam.name}</li>
+            `;
+        });
+        resultadosHTML += '</ul>';
+
+        document.getElementById(containerId).innerHTML = resultadosHTML;
+    } catch (error) {
+        document.getElementById(containerId).innerHTML = 'Error al cargar los resultados.';
+    }
+}
+
+// Llamadas a la API para cada liga
+obtenerResultados('Premier League', 'premier-results');
+obtenerResultados('Liga MX', 'liga-mx-results');
+obtenerResultados('La Liga', 'liga-espanola-results');
+obtenerResultados('Serie A', 'serie-a-results');
+obtenerResultados('Eredivisie', 'eredivise-results');
+obtenerResultados('Bundesliga', 'bundesliga-results');
+obtenerResultados('Ligue 1', 'ligue-1-results');
+obtenerResultados('Champions League', 'champions-league-results');
+obtenerResultados('Europa League', 'europa-league-results');
+</script>
+
 </body>
 </html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
