@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fútbol en Vivo</title>
     <style>
-        /* Resetear márgenes y padding */
         * {
             margin: 0;
             padding: 0;
@@ -15,6 +14,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background-color: #f4f4f4;
         }
 
         header {
@@ -38,7 +38,6 @@
             font-weight: bold;
         }
 
-        /* Secciones */
         section {
             padding: 20px;
             margin: 10px;
@@ -47,42 +46,41 @@
         }
 
         .premier-league {
-            background-color: #006F3F; /* Premier League */
+            background-color: #006F3F;
         }
 
         .liga-mx {
-            background-color: #006B87; /* Liga MX */
+            background-color: #006B87;
         }
 
         .liga-espanola {
-            background-color: #B91C27; /* Liga Española */
+            background-color: #B91C27;
         }
 
         .serie-a {
-            background-color: #009C3B; /* Serie A */
+            background-color: #009C3B;
         }
 
         .eredivise {
-            background-color: #003D5B; /* Eredivisie */
+            background-color: #003D5B;
         }
 
         .bundesliga {
-            background-color: #E20A37; /* Bundesliga */
+            background-color: #E20A37;
         }
 
         .ligue-1 {
-            background-color: #003B5C; /* Ligue 1 */
+            background-color: #003B5C;
         }
 
         .champions-league {
-            background-color: #000080; /* Champions League */
+            background-color: #000080;
         }
 
         .europa-league {
-            background-color: #5E4B8B; /* Europa League */
+            background-color: #5E4B8B;
         }
 
-        /* Responsivo para pantallas pequeñas */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -108,10 +106,38 @@
         .team img {
             width: 100%;
             height: auto;
+            border-radius: 50%;
         }
 
         .team-name {
             margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .team a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .matches {
+            margin-top: 20px;
+        }
+
+        .match {
+            padding: 10px;
+            background-color: #333;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .match h3 {
+            font-size: 16px;
+        }
+
+        .match span {
+            font-size: 14px;
+            color: lightgrey;
         }
     </style>
 </head>
@@ -119,7 +145,7 @@
 
 <header>
     <h1>Fútbol en Vivo</h1>
-    <p>Resultados y noticias en tiempo real</p>
+    <p>Resultados y calendario en tiempo real</p>
 </header>
 
 <nav>
@@ -134,61 +160,84 @@
     <a href="#europa-league">Europa League</a>
 </nav>
 
+<!-- Sección Premier League -->
 <section id="premier-league" class="premier-league">
     <h2>Premier League</h2>
-    <p>Resultados en vivo de la Premier League</p>
-    <div id="premier-results">Cargando resultados...</div>
-
     <div class="team-list">
-        <div class="team">
-            <img src="images/arsenal.png" alt="Arsenal">
-            <div class="team-name">Arsenal</div>
-        </div>
-        <div class="team">
-            <img src="images/astonvilla.png" alt="Aston Villa">
-            <div class="team-name">Aston Villa</div>
-        </div>
-        <!-- Resto de los equipos -->
+        <!-- Equipos de la Premier League aquí -->
     </div>
+    <div id="premier-matches" class="matches"></div>
 </section>
 
-<!-- Otras secciones de ligas -->
+<!-- Sección Liga MX -->
+<section id="liga-mx" class="liga-mx">
+    <h2>Liga MX</h2>
+    <div class="team-list">
+        <!-- Equipos de la Liga MX aquí -->
+    </div>
+    <div id="liga-mx-matches" class="matches"></div>
+</section>
+
+<!-- Sección Liga Española -->
+<section id="liga-espanola" class="liga-espanola">
+    <h2>Liga Española</h2>
+    <div class="team-list">
+        <!-- Equipos de la Liga Española aquí -->
+    </div>
+    <div id="liga-espanola-matches" class="matches"></div>
+</section>
+
+<!-- Sección Serie A -->
+<section id="serie-a" class="serie-a">
+    <h2>Serie A</h2>
+    <div class="team-list">
+        <!-- Equipos de la Serie A aquí -->
+    </div>
+    <div id="serie-a-matches" class="matches"></div>
+</section>
+
+<!-- Puedes agregar más secciones aquí -->
 
 <script>
-// API Key y URL de la API (reemplaza tu API Key real aquí)
-const apiKey = '8e27fefad48244b0b6180620d150c2ad';
-const apiUrl = 'https://api.football-data.org/v4/matches';
+// Tu clave de API
+const apiKey = 'TU_API_KEY'; // Reemplaza con tu propia API Key
 
-// Función para obtener y mostrar los resultados en vivo para cada liga
-async function obtenerResultados(liga, containerId) {
-    try {
-        const response = await fetch(apiUrl, {
-            headers: {
-                'X-Auth-Token': apiKey
-            }
-        });
-        const data = await response.json();
-        const partidos = data.matches.filter(match => match.competition.name === liga);
+// Función para obtener los partidos de la liga
+async function getMatches(competition, containerId) {
+    const url = `https://api.football-data.org/v4/competitions/${competition}/matches`;
+    const response = await fetch(url, {
+        headers: { 'X-Auth-Token': apiKey }
+    });
+    const data = await response.json();
+    const matchesContainer = document.getElementById(containerId);
 
-        let resultadosHTML = '<ul>';
-        partidos.forEach(match => {
-            resultadosHTML += `
-                <li>${match.homeTeam.name} ${match.score.fullTime.homeTeam} - ${match.score.fullTime.awayTeam} ${match.awayTeam.name}</li>
-            `;
-        });
-        resultadosHTML += '</ul>';
+    // Limitar a los primeros 5 partidos (puedes ajustarlo)
+    const matches = data.matches.slice(0, 5);
 
-        document.getElementById(containerId).innerHTML = resultadosHTML;
-    } catch (error) {
-        document.getElementById(containerId).innerHTML = 'Error al cargar los resultados.';
-    }
+    matchesContainer.innerHTML = matches.map(match => {
+        const homeTeam = match.homeTeam.name;
+        const awayTeam = match.awayTeam.name;
+        const status = match.status;
+        const score = match.score.fullTime;
+        return `
+            <div class="match">
+                <h3>${homeTeam} vs ${awayTeam}</h3>
+                <span>Status: ${status}</span><br>
+                <span>Resultado: ${score.homeTeam} - ${score.awayTeam}</span>
+            </div>
+        `;
+    }).join('');
 }
 
-// Llamadas a la API para cada liga
-obtenerResultados('Premier League', 'premier-results');
-// Otras ligas se pueden agregar aquí...
+// Cargar los partidos para cada liga
+window.onload = () => {
+    getMatches('PL', 'premier-matches'); // Premier League
+    getMatches('PD', 'liga-espanola-matches'); // La Liga (España)
+    getMatches('SA', 'serie-a-matches'); // Serie A (Italia)
+    getMatches('MX', 'liga-mx-matches'); // Liga MX
+    // Puedes añadir más ligas según necesites
+};
 </script>
 
 </body>
 </html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
